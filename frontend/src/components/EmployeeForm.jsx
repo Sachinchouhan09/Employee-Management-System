@@ -43,14 +43,14 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
 
     if (editEmployee) {
       const response = await fetch(
-  `https://employee-management-system-1-n0rv.onrender.com/api/employees/${editEmployee._id}`,
-  {
-      method: "PUT",
+        `https://employee-management-system-1-n0rv.onrender.com/api/employees/${editEmployee._id}`,
+        {
+          method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       if (response.ok) {
@@ -72,16 +72,16 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
 
       return;
     }
-
-  const response = await fetch(
-  `https://employee-management-system-1-n0rv.onrender.com/api/employees/${editEmployee._id}`,
-  {
+    const response = await fetch(
+      "https://employee-management-system-1-n0rv.onrender.com/api/employees",
+      {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      }
+      },
     );
 
     if (response.ok) {
