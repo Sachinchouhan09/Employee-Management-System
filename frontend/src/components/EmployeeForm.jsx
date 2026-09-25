@@ -43,9 +43,9 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
 
     if (editEmployee) {
       const response = await fetch(
-        `https://employee-management-system-production-87cf.up.railway.app/api/employees/${editEmployee._id}`,
-        {
-          method: "PUT",
+  `https://employee-management-system-1-n0rv.onrender.com/api/employees/${editEmployee._id}`,
+  {
+      method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
@@ -73,9 +73,9 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
       return;
     }
 
-    const response = await fetch(
-      "https://employee-management-system-production-87cf.up.railway.app/api/employees",
-      {
+  const response = await fetch(
+  `https://employee-management-system-1-n0rv.onrender.com/api/employees/${editEmployee._id}`,
+  {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
