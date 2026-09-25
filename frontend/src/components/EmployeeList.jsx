@@ -12,7 +12,9 @@ const EmployeeList = ({ setEditEmployee, refresh }) => {
     setLoading(true);
     setError("");
 
-    fetch("http://localhost:5000/api/employees")
+    fetch(
+      "https://employee-management-system-production-87cf.up.railway.app/api/employees"
+    )
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch employees");
@@ -67,7 +69,7 @@ const EmployeeList = ({ setEditEmployee, refresh }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/employees/${id}`,
+        `https://employee-management-system-production-87cf.up.railway.app/api/employees/${id}`,
         {
           method: "DELETE",
         }

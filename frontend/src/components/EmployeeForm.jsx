@@ -25,7 +25,6 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  
     if (
       formData.name.trim() === "" ||
       formData.department.trim() === "" ||
@@ -37,7 +36,6 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
       return;
     }
 
-
     if (formData.salary <= 0) {
       alert("Salary must be greater than 0");
       return;
@@ -45,14 +43,14 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
 
     if (editEmployee) {
       const response = await fetch(
-        `http://localhost:5000/api/employees/${editEmployee._id}`,
+        `https://employee-management-system-production-87cf.up.railway.app/api/employees/${editEmployee._id}`,
         {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        },
+        }
       );
 
       if (response.ok) {
@@ -75,13 +73,16 @@ const EmployeeForm = ({ editEmployee, setEditEmployee, refreshEmployees }) => {
       return;
     }
 
-    const response = await fetch("http://localhost:5000/api/employees", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    const response = await fetch(
+      "https://employee-management-system-production-87cf.up.railway.app/api/employees",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
 
     if (response.ok) {
       alert("Employee added successfully");
